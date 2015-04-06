@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/icons.js" type="text/javascript"></script>
+<title>majorhelper.com Help</title>
+</head>
+
+<body id="help_id">
+
+<div id="wrapper">
+
+<div id="title">
+<a href="./"><img id="banner" src="images/banner.gif"></a><br>
+<div id="title_nav">
+<a href="./" onMouseOver="hiLite('home')" onMouseOut="unHiLite('home')"><img name="homeIcon" src="images/home_no_highlight.gif"></a>
+<a href="./help.html" onMouseOver="hiLite('help')" onMouseOut="unHiLite('help')"><img name="helpIcon" src="images/help_no_highlight.gif"></a>
+<a href="./about.html" onMouseOver="hiLite('about')" onMouseOut="unHiLite('about')"><img name="aboutIcon" src="images/about_no_highlight.gif"></a>
+<script type="text/javascript">
+curPageHiLite(getCurPage());
+</script>
+</div><!-- #title_nav -->
+</div><!-- #title -->
+
+<div id="help">
+<p> If you have already started filling out the form, you can return by clicking your browser's <em>back</em> button.</p>
+<h2>Instructions</h2>
+<p>For each variable, there is a set of possible outcomes. All variables represent future events. Please take this into consideration. For example, the Grades variable does not correspond to the grade that you may have received in high school. Rather, it represents the grade you will receive most often in college.</p>
+<h3>Rating Outcomes</h3>
+A binary variable is one that can take two possible values. Outcomes are rated slightly differently depending on whether a variable is binary or not.
+<ul>
+<li>For binary variables, choose the outcome you prefer.</li>
+<li>For non-binary variables, drag the sliders to indicate your relative preferences across the outcomes.</li>
+</ul>
+<h3>Variable Importance</h3>
+<p>After rating the outcomes of a variable, you'll be ready to determine the importance of the variable. To do this, you must consider the <em>best</em> and the <em>worst</em> outcomes for that variable. Knowing these, then imagine switching from worst to best.</p>
+<p>Now compare what you just imagined to switching from the worst Salary outcome to the best Salary outcome. The Salary variable is the first variable presented. It refers to the salary of your first position after graduating, and its outcomes are given in quartiles.</p>
+<p>Indicate the relative importance of these scenarios by dragging the slider bar. The blue part of the slider represents the current variable, and the green part of the slider represents the Salary variable.</p>
+<p>Variable Importance is always determined relative to Salary, so the green part of the slider always represents Salary.</p>
+<h3>Outcome Indifference</h3>
+If you are indifferent between a variable's outcomes, you can indicate this by either:
+<ol>
+<li>Dragging the Variable Importance slider all the way to the left, such that the entire area contains no blue (just green).</li>
+<li>For binary variables, not selecting an outcome.</li>
+<li>For non-binary variables, setting the same score for all possible outcomes (the easiest way to do this is by leaving all the outcome sliders in their initial positions).</li>
+</ol>
+<br>
+<br>
+</div>
+
+</div><!-- #wrapper-->
+
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>majorhelper.com</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js" type="text/javascript"></script>
+<script src="js/jquery.bt.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/icons.js" type="text/javascript"></script>
+
+<link href="css/jquery.bt.css" rel="stylesheet" type="text/css" />
+<link href="css/jquery-ui-1.8.18.custom.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="home_id">
+<div id="wrapper">
+
+<div id="title">
+<a href="./"><img id="banner" src="images/banner.gif"></a><br>
+<div id="title_nav">
+<a href="./" onMouseOver="hiLite('home')" onMouseOut="unHiLite('home')"><img name="homeIcon" src="images/home_no_highlight.gif"></a>
+<a href="./help.html" onMouseOver="hiLite('help')" onMouseOut="unHiLite('help')"><img name="helpIcon" src="images/help_no_highlight.gif"></a>
+<a href="./about.html" onMouseOver="hiLite('about')" onMouseOut="unHiLite('about')"><img name="aboutIcon" src="images/about_no_highlight.gif"></a>
+<script type="text/javascript">
+curPageHiLite(getCurPage());
+</script>
+</div><!-- #title_nav -->
+</div><!-- #title -->
+
+<form id="main_form" name="mh_form" method=post action="results.jsp">
+<div id="form_wrapper">
+
+<div id="group_navigation">
+    <h3>Variable Groups</h3>
+    <ul>
+        <li id="nav_group_career"><a href="#" onclick="show_group('group_career');return false;">Career</a></li>
+        <li id="nav_group_grad"><a href="#" onclick="show_group('group_grad');return false;">Graduate School</a></li>
+        <li id="nav_group_leisure"><a href="#" onclick="show_group('group_leisure');return false;">Leisure and Socializing</a></li>
+        <li id="nav_group_class"><a href="#" onclick="show_group('group_class');return false;">Classroom Activity</a></li>
+        <li id="nav_group_grades"><a href="#" onclick="show_group('group_grades');return false;">Grades</a></li>
+        <li id="nav_group_homeworks"><a href="#" onclick="show_group('group_homeworks');return false;">Homeworks and Projects</a></li>
+        <li id="nav_group_coursework"><a href="#" onclick="show_group('group_coursework');return false;">Emphasis of Coursework</a></li>
+    </ul>
+    <div id="buttons_div">
+    <button type="button" onclick="resetFun()" class="nav_buttons">Reset</button>
+    <input type="submit" value="Submit" class="nav_buttons"/>
+    </div>
+</div><!-- #group_navigation -->
+
+<div id="form_help">
+<p>To assist you with picking a college major, first we need to understand your preferences. We will present you with possible outcomes for an assortment of variables. Your input should reflect your preferences toward these outcomes.</p>
+<p>Please complete as much as you can. The more information you provide, the better the system will work.</p>
+<p>Clicking on some of the variables and outcomes will reveal helpful information and additional details.</p>
+</div><!-- #form_help -->
+
+
+<div class="yui3-skin-sam">
+
+<div id="group_career">
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_salary_value" id="_a_salary_value" disabled value="1" class="less_thin" /> <a class="popup" href="JavaScript:display_help()" title="Annual Salary is the first variable. Unlike the other variables, there is no Variable Importance slider below Salary's outcomes.">Annual Salary at First Job after Graduation</a></h2>
+  &#160;<input type="text" name="_v_salary_value-3" id="_v_salary_value-3" value="0" readonly class="thin" />&#160;<span class="_v_salary_value-3"></span> &#160; <a class="popup" href="JavaScript:display_help()" title="This is an outcome that Salary can take. This outcome includes salaries that are over the 75th percentile (relative to other students' salaries at their first job). If you consider this the best outcome, which you likely do, drag the slider all the way to the right.">Top Quartile</a><br>
+  &#160;<input type="text" name="_v_salary_value-2" id="_v_salary_value-2" value="0" readonly class="thin" />&#160;<span class="_v_salary_value-2"></span> &#160; <a class="popup" href="JavaScript:display_help()" title="This is another outcome that Salary can take. This outcome includes salaries that are between the 50th and 75th percentile. Indicate your preference toward this outcome by placing the slider in a position relative to the other outcome sliders.">Second Quartile</a><br>
+  &#160;<input type="text" name="_v_salary_value-1" id="_v_salary_value-1" value="0" readonly class="thin" />&#160;<span class="_v_salary_value-1"></span> &#160; <a class="popup" href="JavaScript:display_help()" title="Next, indicate your preference toward this outcome. This outcome includes salaries that are between the 25th and 50th percentile.">Third Quartile</a><br>
+  &#160;<input type="text" name="_v_salary_value-0" id="_v_salary_value-0" value="0" readonly class="thin" />&#160;<span class="_v_salary_value-0"></span> &#160; <a class="popup" href="JavaScript:display_help()" title="This is the last outcome for Salary. This outcome includes salaries that are below the 25th percentile. Presumably you'll leave this slider where it started, all the way on the left side.">Bottom Quartile</a><br>
+</div>
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_employed_value" id="_a_employed_value" value="1" readonly class="less_thin" /> <a class="popup" href="JavaScript:display_help()" title="Unemployment Status is another variable. Since this is a binary variable, just choose the outcome that you prefer. The blue and green slider below the outcomes is for indicating Variable Importance. The blue part of the slider represents the current variable, and the green part of the slider represents the Salary variable from above. To evaluate Variable Importance, imagine switching from the worst outcome to the best. Then compare the importance of this switch to switching from the worst Salary outcome to the best Salary outcome. The Salary outcomes are shown right above this variable.">Unemployment Status One Year after Graduation</a></h2>
+  <input type="radio" name="_r_employed_value" value="1" id="_r_employed_value-1" class="thin" /> <label for="_r_employed_value-1">Employed</label><br>
+  <input type="radio" name="_r_employed_value" value="0" id="_r_employed_value-0" class="thin" /> <label for="_r_employed_value-0">Unemployed</label><br>
+  <div id="slider-_a_employed_value" class="var_imp_slider"></div>
+</div>
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_occupation_value" id="_a_occupation_value" value="1" readonly class="less_thin" /> <label for="_a_occupation_value">Career Occupation</label></h2>
+  &#160;<input type="text" name="_v_occupation_value-1" id="_v_occupation_value-1" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-1"></span> &#160; <label for="_v_occupation_value-1">Arts</label><br>
+  &#160;<input type="text" name="_v_occupation_value-4" id="_v_occupation_value-4" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-4"></span> &#160; <label for="_v_occupation_value-4">Business</label><br>
+  &#160;<input type="text" name="_v_occupation_value-6" id="_v_occupation_value-6" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-6"></span> &#160; <label for="_v_occupation_value-6">Computer Services</label><br>
+  &#160;<input type="text" name="_v_occupation_value-8" id="_v_occupation_value-8" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-8"></span> &#160; <label for="_v_occupation_value-8">Education</label><br>
+  &#160;<input type="text" name="_v_occupation_value-9" id="_v_occupation_value-9" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-9"></span> &#160; <label for="_v_occupation_value-9">Engineering</label><br>
+  &#160;<input type="text" name="_v_occupation_value-10" id="_v_occupation_value-10" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-10"></span> &#160; <label for="_v_occupation_value-10">Finance</label><br>
+  &#160;<input type="text" name="_v_occupation_value-12" id="_v_occupation_value-12" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-12"></span> &#160; <label for="_v_occupation_value-12">Health Professionals</label><br>
+  &#160;<input type="text" name="_v_occupation_value-17" id="_v_occupation_value-17" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-17"></span> &#160; <label for="_v_occupation_value-17">Management</label><br>
+  &#160;<input type="text" name="_v_occupation_value-18" id="_v_occupation_value-18" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-18"></span> &#160; <label for="_v_occupation_value-18">Office</label><br>
+  &#160;<input type="text" name="_v_occupation_value-22" id="_v_occupation_value-22" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-22"></span> &#160; <label for="_v_occupation_value-22">Sales</label><br>
+  <a href="#" id="more_occs-show" class="showLink" onclick="showHide('more_occs');return false;">More Occupations</a>
+  <div id="more_occs" class="more">
+  &#160;<input type="text" name="_v_occupation_value-0" id="_v_occupation_value-0" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-0"></span> &#160; <label for="_v_occupation_value-0">Architecture</label><br>
+  &#160;<input type="text" name="_v_occupation_value-2" id="_v_occupation_value-2" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-2"></span> &#160; <label for="_v_occupation_value-2">Blue Collar</label><br>
+  &#160;<input type="text" name="_v_occupation_value-3" id="_v_occupation_value-3" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-3"></span> &#160; <label for="_v_occupation_value-3">Building</label><br>
+  &#160;<input type="text" name="_v_occupation_value-5" id="_v_occupation_value-5" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-5"></span> &#160; <label for="_v_occupation_value-5">Community Service</label><br>
+  &#160;<input type="text" name="_v_occupation_value-7" id="_v_occupation_value-7" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-7"></span> &#160; <label for="_v_occupation_value-7">Construction</label><br>
+  &#160;<input type="text" name="_v_occupation_value-11" id="_v_occupation_value-11" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-11"></span> &#160; <label for="_v_occupation_value-11">Food Service</label><br>
+  &#160;<input type="text" name="_v_occupation_value-13" id="_v_occupation_value-13" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-13"></span> &#160; <label for="_v_occupation_value-13">Health Support</label><br>
+  &#160;<input type="text" name="_v_occupation_value-14" id="_v_occupation_value-14" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-14"></span> &#160; <label for="_v_occupation_value-14">Installation</label><br>
+  &#160;<input type="text" name="_v_occupation_value-15" id="_v_occupation_value-15" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-15"></span> &#160; <label for="_v_occupation_value-15">Legal</label><br>
+  &#160;<input type="text" name="_v_occupation_value-16" id="_v_occupation_value-16" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-16"></span> &#160; <label for="_v_occupation_value-16">Life Science</label><br>
+  &#160;<input type="text" name="_v_occupation_value-19" id="_v_occupation_value-19" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-19"></span> &#160; <label for="_v_occupation_value-19">Personal Service</label><br>
+  &#160;<input type="text" name="_v_occupation_value-20" id="_v_occupation_value-20" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-20"></span> &#160; <label for="_v_occupation_value-20">Production</label><br>
+  &#160;<input type="text" name="_v_occupation_value-21" id="_v_occupation_value-21" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-21"></span> &#160; <label for="_v_occupation_value-21">Protective Services</label><br>
+  &#160;<input type="text" name="_v_occupation_value-23" id="_v_occupation_value-23" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-23"></span> &#160; <label for="_v_occupation_value-23">Social Science</label><br>
+  &#160;<input type="text" name="_v_occupation_value-24" id="_v_occupation_value-24" value="0" readonly class="thin" />&#160;<span class="_v_occupation_value-24"></span> &#160; <label for="_v_occupation_value-24">Transportation</label><br>
+  <a href="#" id="more_occs-hide" class="hideLink" onclick="showHide('more_occs');return false;">Less Occupations</a>
+  </div><!-- #example -->
+  <div id="slider-_a_occupation_value" class="var_imp_slider"></div>
+</div>
+</div><!-- #group_career-->
+<div id="group_grad">
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_graduate_degree_value" id="_a_graduate_degree_value" value="1" readonly class="less_thin" /> <label for="_a_graduate_degree_value">Obtain A Graduate Degree</label></h2>
+  <input type="radio" name="_r_graduate_degree_value" value="1" id="_r_graduate_degree_value-1" class="thin" /> <label for="_r_graduate_degree_value-1">Yes</label><br>
+  <input type="radio" name="_r_graduate_degree_value" value="0" id="_r_graduate_degree_value-0" class="thin" /> <label for="_r_graduate_degree_value-0">No</label><br>
+  <div id="slider-_a_graduate_degree_value" class="var_imp_slider"></div>
+</div>
+</div><!-- #group_grad-->
+<div id="group_leisure">
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_hours_relaxing_value" id="_a_hours_relaxing_value" value="1" readonly class="less_thin" /> <label for="_a_hours_relaxing_value">Hours per Week Relaxing and Socializing</label></h2>
+  <input type="text" name="_v_hours_relaxing_value-0" id="_v_hours_relaxing_value-0" value="0" readonly class="thin" />&#160;<span class="_v_hours_relaxing_value-0"></span> &#160; <label for="_v_hours_relaxing_value-0">0 - 10</label><br>
+  <input type="text" name="_v_hours_relaxing_value-1" id="_v_hours_relaxing_value-1" value="0" readonly class="thin" />&#160;<span class="_v_hours_relaxing_value-1"></span> &#160; <label for="_v_hours_relaxing_value-1">11 - 20</label><br>
+  <input type="text" name="_v_hours_relaxing_value-2" id="_v_hours_relaxing_value-2" value="0" readonly class="thin" />&#160;<span class="_v_hours_relaxing_value-2"></span> &#160; <label for="_v_hours_relaxing_value-2">21 - 30</label><br>
+  <input type="text" name="_v_hours_relaxing_value-3" id="_v_hours_relaxing_value-3" value="0" readonly class="thin" />&#160;<span class="_v_hours_relaxing_value-3"></span> &#160; <label for="_v_hours_relaxing_value-3">31 or More</label><br>
+  <div id="slider-_a_hours_relaxing_value" class="var_imp_slider"></div>
+</div>
+</div><!-- #group_leisure-->
+<div id="group_class">
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_participate_often_value" id="_a_participate_often_value" value="1" readonly class="less_thin" /> <label for="_a_participate_often_value">Participate Often</label></h2>
+  <input type="radio" name="_r_participate_often_value" value="1" id="_r_participate_often_value-1" class="thin" /> <label for="_r_participate_often_value-1">Yes</label><br>
+  <input type="radio" name="_r_participate_often_value" value="0" id="_r_participate_often_value-0" class="thin" /> <label for="_r_participate_often_value-0">No</label><br>
+  <div id="slider-_a_participate_often_value" class="var_imp_slider"></div>
+</div>
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_presentations_often_value" id="_a_presentations_often_value" value="1" readonly class="less_thin" /> <label for="_a_presentations_often_value">Give Presentations Often</label></h2>
+  <input type="radio" name="_r_presentations_often_value" value="1" id="_r_presentations_often_value-1" class="thin" /> <label for="_r_presentations_often_value-1">Yes</label><br>
+  <input type="radio" name="_r_presentations_often_value" value="0" id="_r_presentations_often_value-0" class="thin" /> <label for="_r_presentations_often_value-0">No</label><br>
+  <div id="slider-_a_presentations_often_value" class="var_imp_slider"></div>
+</div>
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_collab_in_class_value" id="_a_collab_in_class_value" value="1" readonly class="less_thin" /> <label for="_a_collab_in_class_value">Work with Others Often</label></h2>
+  <input type="radio" name="_r_collab_in_class_value" value="1" id="_r_collab_in_class_value-1" class="thin" /> <label for="_r_collab_in_class_value-1">Yes</label><br>
+  <input type="radio" name="_r_collab_in_class_value" value="0" id="_r_collab_in_class_value-0" class="thin" /> <label for="_r_collab_in_class_value-0">No</label><br>
+  <div id="slider-_a_collab_in_class_value" class="var_imp_slider"></div>
+</div>
+</div><!-- #group_class-->
+<div id="group_grades">
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_grades_value" id="_a_grades_value" value="1" readonly class="less_thin" /> <label for="_a_grades_value">Grade Received Most Often</label></h2>
+  <input type="text" name="_v_grades_value-2" id="_v_grades_value-2" value="0" readonly class="thin" />&#160;<span class="_v_grades_value-2"></span> &#160; <label for="_v_grades_value-2">A</label><br>
+  <input type="text" name="_v_grades_value-1" id="_v_grades_value-1" value="0" readonly class="thin" />&#160;<span class="_v_grades_value-1"></span> &#160; <label for="_v_grades_value-1">B</label><br>
+  <input type="text" name="_v_grades_value-0" id="_v_grades_value-0" value="0" readonly class="thin" />&#160;<span class="_v_grades_value-0"></span> &#160; <label for="_v_grades_value-0">C or Lower</label><br>
+  <div id="slider-_a_grades_value" class="var_imp_slider"></div>
+</div>
+</div><!-- #group_grades-->
+<div id="group_homeworks">
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_hours_preparing_value" id="_a_hours_preparing_value" value="1" readonly class="less_thin" /> <label for="_a_hours_preparing_value">Hours per Week Preparing for Class</label></h2>
+  <input type="text" name="_v_hours_preparing_value-0" id="_v_hours_preparing_value-0" value="0" readonly class="thin" />&#160;<span class="_v_hours_preparing_value-0"></span> &#160; <label for="_v_hours_preparing_value-0">0 - 10</label><br>
+  <input type="text" name="_v_hours_preparing_value-1" id="_v_hours_preparing_value-1" value="0" readonly class="thin" />&#160;<span class="_v_hours_preparing_value-1"></span> &#160; <label for="_v_hours_preparing_value-1">11 - 20</label><br>
+  <input type="text" name="_v_hours_preparing_value-2" id="_v_hours_preparing_value-2" value="0" readonly class="thin" />&#160;<span class="_v_hours_preparing_value-2"></span> &#160; <label for="_v_hours_preparing_value-2">21 - 30</label><br>
+  <input type="text" name="_v_hours_preparing_value-3" id="_v_hours_preparing_value-3" value="0" readonly class="thin" />&#160;<span class="_v_hours_preparing_value-3"></span> &#160; <label for="_v_hours_preparing_value-3">31 or More</label><br>
+  <div id="slider-_a_hours_preparing_value" class="var_imp_slider"></div>
+</div>
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_community_project_value" id="_a_community_project_value" value="1" readonly class="less_thin" /> <a class="popup" href="JavaScript:display_help()" title="Work on at least one community project during the semester.">Community Project</a></h2>
+  <input type="radio" name="_r_community_project_value" value="1" id="_r_community_project_value-1" class="thin" /> <label for="_r_community_project_value-1">Sometimes</label><br>
+  <input type="radio" name="_r_community_project_value" value="0" id="_r_community_project_value-0" class="thin" /> <label for="_r_community_project_value-0">Never</label><br>
+  <div id="slider-_a_community_project_value" class="var_imp_slider"></div>
+</div>
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_twenty_page_paper_value" id="_a_twenty_page_paper_value" value="1" readonly class="less_thin" /> <a class="popup" href="JavaScript:display_help()" title="Write at least one twenty page paper during the semester.">Twenty Page Paper</a></h2>
+  <input type="radio" name="_r_twenty_page_paper_value" value="1" id="_r_twenty_page_paper_value-1" class="thin" /> <label for="_r_twenty_page_paper_value-1">Yes</label><br>
+  <input type="radio" name="_r_twenty_page_paper_value" value="0" id="_r_twenty_page_paper_value-0" class="thin" /> <label for="_r_twenty_page_paper_value-0">No</label><br>
+  <div id="slider-_a_twenty_page_paper_value" class="var_imp_slider"></div>
+</div>
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_collab_outside_value" id="_a_collab_outside_value" value="1" readonly class="less_thin" /> <label for="_a_collab_outside_value">Work with Others Outside Class Often</label></h2>
+  <input type="radio" name="_r_collab_outside_value" value="1" id="_r_collab_outside_value-1" class="thin" /> <label for="_r_collab_outside_value-1">Yes</label><br>
+  <input type="radio" name="_r_collab_outside_value" value="0" id="_r_collab_outside_value-0" class="thin" /> <label for="_r_collab_outside_value-0">No</label><br>
+  <div id="slider-_a_collab_outside_value" class="var_imp_slider"></div>
+</div>
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_long_prob_sets_value" id="_a_long_prob_sets_value" value="1" readonly class="less_thin" /> <a class="popup" href="JavaScript:display_help()" title="Number of problem sets taking more than an hour per week.">Long Problem Sets per Week</a></h2>
+  <input type="text" name="_v_long_prob_sets_value-0" id="_v_long_prob_sets_value-0" value="0" readonly class="thin" />&#160;<span class="_v_long_prob_sets_value-0"></span> &#160; <label for="_v_long_prob_sets_value-0">0 - 2</label><br>
+  <input type="text" name="_v_long_prob_sets_value-1" id="_v_long_prob_sets_value-1" value="0" readonly class="thin" />&#160;<span class="_v_long_prob_sets_value-1"></span> &#160; <label for="_v_long_prob_sets_value-1">3 - 6</label><br>
+  <input type="text" name="_v_long_prob_sets_value-2" id="_v_long_prob_sets_value-2" value="0" readonly class="thin" />&#160;<span class="_v_long_prob_sets_value-2"></span> &#160; <label for="_v_long_prob_sets_value-2">7 or More</label><br>
+  <div id="slider-_a_long_prob_sets_value" class="var_imp_slider"></div>
+</div>
+</div><!-- #group_homeworks-->
+<div id="group_coursework">
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_memorize_facts_value" id="_a_memorize_facts_value" value="1" readonly class="less_thin" /> <a class="popup" href="JavaScript:display_help()" title="Memorizing facts, ideas, or methods.">Memorization</a></h2>
+  <input type="radio" name="_r_memorize_facts_value" value="1" id="_r_memorize_facts_value-1" class="thin" /> <label for="_r_memorize_facts_value-1">Yes</label><br>
+  <input type="radio" name="_r_memorize_facts_value" value="0" id="_r_memorize_facts_value-0" class="thin" /> <label for="_r_memorize_facts_value-0">No</label><br>
+  <div id="slider-_a_memorize_facts_value" class="var_imp_slider"></div>
+</div>
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_judgments_value" id="_a_judgments_value" value="1" readonly class="less_thin" /> <a class="popup" href="JavaScript:display_help()" title="Making judgments about the value of information, arguments, or methods.">Evaluation</a></h2>
+  <input type="radio" name="_r_judgments_value" value="1" id="_r_judgments_value-1" class="thin" /> <label for="_r_judgments_value-1">Yes</label><br>
+  <input type="radio" name="_r_judgments_value" value="0" id="_r_judgments_value-0" class="thin" /> <label for="_r_judgments_value-0">No</label><br>
+  <div id="slider-_a_judgments_value" class="var_imp_slider"></div>
+</div>
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_ideas_value" id="_a_ideas_value" value="1" readonly class="less_thin" /> <a class="popup" href="JavaScript:display_help()" title="Synthesizing and organizing ideas, information, or experiences.">Ideas</a></h2>
+  <input type="radio" name="_r_ideas_value" value="1" id="_r_ideas_value-1" class="thin" /> <label for="_r_ideas_value-1">Yes</label><br>
+  <input type="radio" name="_r_ideas_value" value="0" id="_r_ideas_value-0" class="thin" /> <label for="_r_ideas_value-0">No</label><br>
+  <div id="slider-_a_ideas_value" class="var_imp_slider"></div>
+</div>
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_applications_value" id="_a_applications_value" value="1" readonly class="less_thin" /> <a class="popup" href="JavaScript:display_help()" title="Applying theories or concepts to practical problems.">Applications</a></h2>
+  <input type="radio" name="_r_applications_value" value="1" id="_r_applications_value-1" class="thin" /> <label for="_r_applications_value-1">Yes</label><br>
+  <input type="radio" name="_r_applications_value" value="0" id="_r_applications_value-0" class="thin" /> <label for="_r_applications_value-0">No</label><br>
+  <div id="slider-_a_applications_value" class="var_imp_slider"></div>
+</div>
+<div class="var_and_outcomes">
+  <h2> <input type="text" name="_a_analysis_value" id="_a_analysis_value" value="1" readonly class="less_thin" /> <a class="popup" href="JavaScript:display_help()" title="Analyzing the basic elements of an idea, experience, or theory.">Analysis</a></h2>
+  <input type="radio" name="_r_analysis_value" value="1" id="_r_analysis_value-1" class="thin" /> <label for="_r_analysis_value-1">Yes</label><br>
+  <input type="radio" name="_r_analysis_value" value="0" id="_r_analysis_value-0" class="thin" /> <label for="_r_analysis_value-0">No</label><br>
+  <div id="slider-_a_analysis_value" class="var_imp_slider"></div>
+</div>
+
+
+</div><!-- #group_coursework-->
+
+</div><!-- .yui3-skin-sam -->
+
+<div id="q_nav">
+<a id="prev_q" href="#" onclick="prev_group('group_career');return false;">&#171; Previous Page</a><span id="q_sep"> &#8212; </span><a id="next_q" href="#" onclick="next_group();return false;">Next Page &#187;</a>
+</div>
+
+</div><!-- #form_wrapper-->
+</form>
+
+</div><!-- #wrapper-->
+
+<script src="js/form_logic.js" type="text/javascript"></script>
+<script src="js/gen_sliders.js" type="text/javascript"></script>
+<script type="text/javascript">
+// This has to come after the text it was used for or it didn't work
+$('.popup').bt({
+    padding: 15,
+    width: 450,
+    spikeLength: 15,
+    spikeGirth: 40,
+    cornerRadius: 20,
+    fill: 'rgba(0, 0, 0, .8)',
+    strokeWidth: 3,
+    trigger: 'click',
+    strokeStyle: '#ef4136',
+    //cssStyles: {color: '#FFF', fontSize: 'large'},
+    cssStyles: {color: '#FFF', fontSize: 'medium'},
+    positions: ['top', 'bottom'],
+    overlap: -7,
+});
+
+function display_help() {
+    // This is just so that "display_help" will be shown in the status bar when hovering over help links
+}
+</script>
+<script src="js/script.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+html {
+	overflow-y: scroll;
+	font-family: Verdana;
+}
+
+#banner {
+	padding: 20px;
+	padding-right:50px;
+}
+
+a img {
+	border: none;
+}
+
+#buttons_div {
+	padding-left: 40px;
+}
+
+#title {
+	padding-bottom: 25px;
+}
+
+/*
+#title #title_nav img {
+    width: 60px;
+    height: 60px;
+}*/
+
+.nav_buttons {
+    padding: 7px;
+    font-size: 110%;
+}
+
+#form_wrapper{
+    display:table;
+}
+
+#group_navigation {
+	display:table-cell;
+    width:300px;
+    padding-left: 80px;
+    padding-right: 30px;
+}
+
+#help {
+	padding-left: 170px;
+	padding-right: 170px;
+	text-align: left;
+}
+
+#about {
+    padding-left: 130px;
+    padding-right: 130px;
+    text-align: left;
+}
+
+#form_wrapper {
+  text-align: left;
+  padding-right:50px;
+}
+
+#wrapper{width:960px;margin:20px auto;text-align:center}
+
+#q_nav {
+	padding-bottom: 60px;
+}
+
+#form_wrapper a {
+    color: #3B5998;
+    text-decoration: none;
+}
+
+#form_wrapper a:hover {
+	border-bottom: 1px dotted #36f;
+}
+
+input.thin {width: 2em;}
+input.less_thin {width: 3em;}
+
+#form_wrapper h1 {
+    margin-bottom: 40px;
+}
+
+#form_wrapper h2 {
+    margin-top: 0;
+}
+
+.var_and_outcomes {
+	margin-bottom: 65px;
+}
+
+.var_imp_slider {
+    width:250px;
+    margin-top: 15px;
+}
+
+.popup {
+}
+
+.more {
+    display: none;
+    padding-top: 4px;
+}
+a.showLink, a.hideLink {
+    text-decoration: none;
+    color: #36f;
+    padding-left: 8px;
+    margin-left: 60px;
+    background: transparent url('../images/down.gif') no-repeat left
+}
+a.hideLink {
+    background: transparent url('../images/up.gif') no-repeat left;
+}
+a.showLink:hover, a.hideLink:hover {
+    border-bottom: 1px dotted #36f;
+}
+
+#chart_table_wrapper {
+	text-align:left;
+	padding-bottom:60px;
+	padding-left:15%;
+	padding-right:15%;
+}
+
+/* Override some of jquery ui. so that it remains if you change theme */
+
+/* size settings */
+.ui-slider .ui-slider-handle { height: .9em; width: .7em; }
+.ui-slider-horizontal { height: .5em; }
+
+/* Color on left side of slider */
+.ui-widget-header { background: #3d89c7; }
+/* Color on right side */
+.ui-widget-content { border: 1px solid gray; background: #a6fcd0; }
+/* clickable: default state */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid gray; background: #f6f6f6; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid black; background: #f6f6f6; }
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid black; background: #ffffff; }
+
+#group_navigation ul {
+	list-style-type: none;
+	padding-left: 0px;
+	padding-bottom: 15px;
+}
+#group_navigation ul li a {
+    padding: 4px;
+    padding-left:20px;
+    font-size: 120%;
+    display: block;
+}
+#group_navigation ul li:hover {
+    background-color:#f1f1f1;
+}
+/* Overide earlier setting */
+#group_navigation ul a:hover {
+    border-bottom: none;
+}
+
+
+
+
+

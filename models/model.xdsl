@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile version="1.0" id="Network" numsamples="1000" discsamples="10000">
+	<nodes>
+		<decision id="major">
+			<state id="arts" />
+			<state id="humanities_and_liberal_arts" />
+			<state id="biology_and_life_science" />
+			<state id="health" />
+			<state id="business" />
+			<state id="industrial_arts_and_consumer_services" />
+			<state id="education" />
+			<state id="computers_and_mathematics" />
+			<state id="engineering" />
+			<state id="agriculture_and_natural_resources" />
+			<state id="physical_sciences" />
+			<state id="communications_and_journalism" />
+			<state id="law_and_public_policy" />
+			<state id="psychology_and_social_work" />
+			<state id="social_science" />
+		</decision>
+		<cpt id="participate_often">
+			<state id="no" />
+			<state id="yes" />
+			<parents>major</parents>
+			<probabilities>0.196019379 0.803980621 0.196019379 0.803980621 0.347902325 0.652097675 0.347902325 0.652097675 0.271624726 0.728375274 0.271624726 0.728375274 0.157684294 0.8423157060000001 0.416100022 0.583899978 0.416100022 0.583899978 0.308494579 0.691505421 0.308494579 0.691505421 0.272422062 0.727577938 0.272422062 0.727577938 0.246214958 0.753785042 0.246214958 0.753785042</probabilities>
+		</cpt>
+		<cpt id="presentations_often">
+			<state id="no" />
+			<state id="yes" />
+			<parents>major</parents>
+			<probabilities>0.407105702 0.592894298 0.407105702 0.592894298 0.495285779 0.504714221 0.495285779 0.504714221 0.292884795 0.707115205 0.292884795 0.707115205 0.227370082 0.772629918 0.494593015 0.505406985 0.494593015 0.505406985 0.574736265 0.425263735 0.574736265 0.425263735 0.362510203 0.637489797 0.362510203 0.637489797 0.42522634 0.57477366 0.42522634 0.57477366</probabilities>
+		</cpt>
+		<cpt id="collab_in_class">
+			<state id="no" />
+			<state id="yes" />
+			<parents>major</parents>
+			<probabilities>0.583551341 0.416448659 0.583551341 0.416448659 0.588720145 0.411279855 0.588720145 0.411279855 0.44448297 0.55551703 0.44448297 0.55551703 0.389849603 0.610150397 0.509351257 0.490648743 0.509351257 0.490648743 0.610493064 0.389506936 0.610493064 0.389506936 0.476665069 0.523334931 0.476665069 0.523334931 0.577384054 0.422615946 0.577384054 0.422615946</probabilities>
+		</cpt>
+		<cpt id="collab_outside">
+			<state id="no" />
+			<state id="yes" />
+			<parents>major</parents>
+			<probabilities>0.556055566 0.443944434 0.556055566 0.443944434 0.40003887 0.59996113 0.40003887 0.59996113 0.283384763 0.716615237 0.283384763 0.716615237 0.363973689 0.636026311 0.167625847 0.832374153 0.167625847 0.832374153 0.384215566 0.6157844340000001 0.384215566 0.6157844340000001 0.334018254 0.665981746 0.334018254 0.665981746 0.488686167 0.511313833 0.488686167 0.511313833</probabilities>
+		</cpt>
+		<cpt id="community_project">
+			<state id="never" />
+			<state id="sometimes" />
+			<parents>major</parents>
+			<probabilities>0.57267146 0.42732854 0.57267146 0.42732854 0.546516942 0.453483058 0.546516942 0.453483058 0.566256666 0.433743334 0.566256666 0.433743334 0.31999774 0.68000226 0.661136397 0.338863603 0.661136397 0.338863603 0.6308770970000001 0.369122903 0.6308770970000001 0.369122903 0.327004422 0.672995578 0.327004422 0.672995578 0.473766897 0.526233103 0.473766897 0.526233103</probabilities>
+		</cpt>
+		<cpt id="memorize_facts">
+			<state id="no" />
+			<state id="yes" />
+			<parents>major</parents>
+			<probabilities>0.473742616 0.526257384 0.473742616 0.526257384 0.211533472 0.7884665280000001 0.211533472 0.7884665280000001 0.357629827 0.642370173 0.357629827 0.642370173 0.450835819 0.549164181 0.478924684 0.521075316 0.478924684 0.521075316 0.399343096 0.6006569040000001 0.399343096 0.6006569040000001 0.319971299 0.680028701 0.319971299 0.680028701 0.384272804 0.615727196 0.384272804 0.615727196</probabilities>
+		</cpt>
+		<cpt id="analysis">
+			<state id="no" />
+			<state id="yes" />
+			<parents>major</parents>
+			<probabilities>0.131385905 0.868614095 0.131385905 0.868614095 0.11866172 0.88133828 0.11866172 0.88133828 0.132989801 0.867010199 0.132989801 0.867010199 0.162008019 0.8379919810000001 0.105055234 0.894944766 0.105055234 0.894944766 0.114238638 0.885761362 0.114238638 0.885761362 0.102742353 0.897257647 0.102742353 0.897257647 0.108452587 0.891547413 0.108452587 0.891547413</probabilities>
+		</cpt>
+		<cpt id="ideas">
+			<state id="no" />
+			<state id="yes" />
+			<parents>major</parents>
+			<probabilities>0.190423126 0.809576874 0.190423126 0.809576874 0.213449532 0.786550468 0.213449532 0.786550468 0.261503478 0.738496522 0.261503478 0.738496522 0.189838363 0.810161637 0.231457707 0.768542293 0.231457707 0.768542293 0.212646048 0.787353952 0.212646048 0.787353952 0.171085495 0.828914505 0.171085495 0.828914505 0.203382084 0.796617916 0.203382084 0.796617916</probabilities>
+		</cpt>
+		<cpt id="judgments">
+			<state id="no" />
+			<state id="yes" />
+			<parents>major</parents>
+			<probabilities>0.243145082 0.756854918 0.243145082 0.756854918 0.283393971 0.716606029 0.283393971 0.716606029 0.252015376 0.747984624 0.252015376 0.747984624 0.234059361 0.765940639 0.29447133 0.70552867 0.29447133 0.70552867 0.30788245 0.69211755 0.30788245 0.69211755 0.190142535 0.809857465 0.190142535 0.809857465 0.216564657 0.783435343 0.216564657 0.783435343</probabilities>
+		</cpt>
+		<cpt id="applications">
+			<state id="no" />
+			<state id="yes" />
+			<parents>major</parents>
+			<probabilities>0.229542484 0.770457516 0.229542484 0.770457516 0.191481073 0.8085189270000001 0.191481073 0.8085189270000001 0.175478335 0.824521665 0.175478335 0.824521665 0.139269021 0.860730979 0.118532593 0.881467407 0.118532593 0.881467407 0.149849191 0.850150809 0.149849191 0.850150809 0.112510777 0.887489223 0.112510777 0.887489223 0.179630593 0.8203694070000001 0.179630593 0.8203694070000001</probabilities>
+		</cpt>
+		<cpt id="hours_preparing">
+			<state id="r0_10" />
+			<state id="r11_20" />
+			<state id="r20_30" />
+			<state id="r30_plus" />
+			<parents>major</parents>
+			<probabilities>0.319651538 0.378609416 0.201278998 0.100460048 0.319651538 0.378609416 0.201278998 0.100460048 0.275886663 0.392725151 0.22401608 0.107372107 0.275886663 0.392725151 0.22401608 0.107372107 0.441629369 0.378196931 0.133631714 0.046541986 0.441629369 0.378196931 0.133631714 0.046541986 0.364286116 0.385108898 0.175755529 0.07484945699999999 0.232340922 0.358946293 0.238689434 0.170023351 0.232340922 0.358946293 0.238689434 0.170023351 0.267871816 0.382224048 0.218433306 0.13147083 0.267871816 0.382224048 0.218433306 0.13147083 0.314832536 0.363923445 0.202727273 0.118516746 0.314832536 0.363923445 0.202727273 0.118516746 0.395130356 0.384597881 0.16208309 0.058188674 0.395130356 0.384597881 0.16208309 0.058188674</probabilities>
+		</cpt>
+		<cpt id="hours_relaxing">
+			<state id="r0_10" />
+			<state id="r11_20" />
+			<state id="r20_30" />
+			<state id="r30_plus" />
+			<parents>major</parents>
+			<probabilities>0.590760692 0.306431603 0.068266405 0.034541299 0.590760692 0.306431603 0.068266405 0.034541299 0.605374181 0.301551243 0.063996885 0.029077692 0.605374181 0.301551243 0.063996885 0.029077692 0.590935735 0.303794096 0.06839497 0.0368752 0.590935735 0.303794096 0.06839497 0.0368752 0.661244019 0.261018857 0.052350127 0.025386997 0.579596004 0.3105812 0.06862101700000001 0.041201779 0.579596004 0.3105812 0.06862101700000001 0.041201779 0.580596606 0.316912972 0.063355227 0.039135194 0.580596606 0.316912972 0.063355227 0.039135194 0.677738956 0.252716221 0.049585986 0.019958838 0.677738956 0.252716221 0.049585986 0.019958838 0.578319519 0.313440598 0.07131480599999999 0.036925077 0.578319519 0.313440598 0.07131480599999999 0.036925077</probabilities>
+		</cpt>
+		<cpt id="grades">
+			<state id="c_or_lower" />
+			<state id="b" />
+			<state id="a" />
+			<parents>major</parents>
+			<probabilities>0.03649635 0.411072732 0.552430918 0.03649635 0.411072732 0.552430918 0.07491582500000001 0.457135457 0.467948718 0.07491582500000001 0.457135457 0.467948718 0.063902089 0.490774418 0.445323493 0.063902089 0.490774418 0.445323493 0.020151558 0.332472635 0.647375807 0.10111297 0.515094202 0.383792828 0.10111297 0.515094202 0.383792828 0.07366407 0.431050977 0.495284953 0.07366407 0.431050977 0.495284953 0.034316533 0.452462772 0.513220695 0.034316533 0.452462772 0.513220695 0.056018413 0.464972283 0.479009304 0.056018413 0.464972283 0.479009304</probabilities>
+		</cpt>
+		<cpt id="employed">
+			<state id="no" />
+			<state id="yes" />
+			<parents>major</parents>
+			<probabilities>0.07999999999999996 0.92 0.06999999999999995 0.9300000000000001 0.05000000000000004 0.95 0.02000000000000002 0.98 0.05000000000000004 0.95 0.05000000000000004 0.95 0.04000000000000004 0.96 0.06000000000000005 0.94 0.06000000000000005 0.94 0.04000000000000004 0.96 0.05000000000000004 0.95 0.06000000000000005 0.94 0.05000000000000004 0.95 0.06000000000000005 0.94 0.06000000000000005 0.94</probabilities>
+		</cpt>
+		<cpt id="graduate_degree">
+			<state id="no" />
+			<state id="yes" />
+			<parents>major</parents>
+			<probabilities>0.77 0.23 0.5900000000000001 0.41 0.46 0.54 0.69 0.31 0.79 0.21 0.8 0.2 0.5600000000000001 0.44 0.6799999999999999 0.32 0.63 0.37 0.73 0.27 0.52 0.48 0.8 0.2 0.76 0.24 0.55 0.45 0.6 0.4</probabilities>
+		</cpt>
+		<cpt id="salary">
+			<state id="quartile1" />
+			<state id="quartile2" />
+			<state id="quartile3" />
+			<state id="quartile4" />
+			<parents>major</parents>
+			<probabilities>0.383677671 0.251118402 0.267499561 0.097704365 0.349342199 0.230684636 0.278992148 0.140981017 0.314229447 0.214672919 0.286512384 0.18458525 0.18710746 0.216409177 0.358170093 0.238313269 0.255921697 0.161818997 0.258580309 0.323678997 0.327702441 0.207374144 0.275699491 0.189223924 0.393325943 0.368103577 0.223461363 0.015109117 0.190308633 0.138392737 0.250285618 0.421013012 0.147265945 0.131486591 0.260449118 0.460798346 0.314229447 0.214672919 0.286512384 0.18458525 0.266730735 0.168733138 0.263134175 0.301401952 0.321039908 0.211040622 0.281059811 0.186859659 0.305579189 0.224720017 0.296894321 0.172806473 0.401017957 0.270749221 0.258354303 0.069878518 0.28657842 0.168168018 0.255315558 0.289938004</probabilities>
+		</cpt>
+		<cpt id="twenty_page_paper">
+			<state id="no" />
+			<state id="yes" />
+			<parents>major</parents>
+			<probabilities>0.547486216 0.452513784 0.547486216 0.452513784 0.570363165 0.429636835 0.570363165 0.429636835 0.462165185 0.537834815 0.462165185 0.537834815 0.535971628 0.464028372 0.405758017 0.594241983 0.405758017 0.594241983 0.608130304 0.391869696 0.608130304 0.391869696 0.549930619 0.450069381 0.549930619 0.450069381 0.432133684 0.567866316 0.432133684 0.567866316</probabilities>
+		</cpt>
+		<cpt id="long_prob_sets">
+			<state id="r0_2" />
+			<state id="r3_6" />
+			<state id="r7_plus" />
+			<parents>major</parents>
+			<probabilities>0.5551470590000001 0.343191964 0.101660977 0.5551470590000001 0.343191964 0.101660977 0.516818977 0.347721823 0.1354592 0.516818977 0.347721823 0.1354592 0.440414922 0.41636223 0.143222847 0.440414922 0.41636223 0.143222847 0.499689248 0.386293011 0.114017741 0.224140443 0.521707459 0.254152098 0.224140443 0.521707459 0.254152098 0.330460949 0.452468883 0.217070168 0.330460949 0.452468883 0.217070168 0.469371099 0.38550168 0.14512722 0.469371099 0.38550168 0.14512722 0.574538216 0.340806736 0.084655049 0.574538216 0.340806736 0.084655049</probabilities>
+		</cpt>
+		<utility id="salary_value">
+			<parents>salary</parents>
+			<utilities>0 0 0 0</utilities>
+		</utility>
+		<utility id="memorize_facts_value">
+			<parents>memorize_facts</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<utility id="ideas_value">
+			<parents>ideas</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<utility id="participate_often_value">
+			<parents>participate_often</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<utility id="hours_relaxing_value">
+			<parents>hours_relaxing</parents>
+			<utilities>0 0 0 0</utilities>
+		</utility>
+		<utility id="graduate_degree_value">
+			<parents>graduate_degree</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<utility id="judgments_value">
+			<parents>judgments</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<utility id="hours_preparing_value">
+			<parents>hours_preparing</parents>
+			<utilities>0 0 0 0</utilities>
+		</utility>
+		<utility id="grades_value">
+			<parents>grades</parents>
+			<utilities>0 0 0</utilities>
+		</utility>
+		<utility id="employed_value">
+			<parents>employed</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<utility id="applications_value">
+			<parents>applications</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<utility id="analysis_value">
+			<parents>analysis</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<utility id="community_project_value">
+			<parents>community_project</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<utility id="twenty_page_paper_value">
+			<parents>twenty_page_paper</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<utility id="long_prob_sets_value">
+			<parents>long_prob_sets</parents>
+			<utilities>0 0 0</utilities>
+		</utility>
+		<utility id="collab_outside_value">
+			<parents>collab_outside</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<utility id="presentations_often_value">
+			<parents>presentations_often</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<utility id="collab_in_class_value">
+			<parents>collab_in_class</parents>
+			<utilities>0 0</utilities>
+		</utility>
+		<cpt id="occupation">
+			<state id="arch" />
+			<state id="arts" />
+			<state id="bc" />
+			<state id="bldg" />
+			<state id="bus" />
+			<state id="comm" />
+			<state id="comp" />
+			<state id="con" />
+			<state id="edu" />
+			<state id="engr" />
+			<state id="fin" />
+			<state id="food" />
+			<state id="hlth_prof" />
+			<state id="hlth_sup" />
+			<state id="inst" />
+			<state id="lgl" />
+			<state id="ls" />
+			<state id="mgmt" />
+			<state id="off" />
+			<state id="pers" />
+			<state id="prod" />
+			<state id="prot" />
+			<state id="sales" />
+			<state id="ss" />
+			<state id="tran" />
+			<parents>major</parents>
+			<probabilities>0.0145 0.25 0.0145 0.0145 0.0145 0.0145 0.0145 0.0145 0.08 0.0145 0.0145 0.0145 0.0145 0.0145 0.0145 0.0145 0.0145 0.14 0.12 0.0145 0.0145 0.0145 0.12 0.0145 0.0145 0.018 0.06 0.018 0.018 0.018 0.018 0.018 0.018 0.11 0.018 0.018 0.018 0.018 0.018 0.018 0.018 0.018 0.18 0.15 0.018 0.018 0.018 0.14 0.018 0.018 0.019 0.019 0.019 0.019 0.019 0.019 0.019 0.019 0.019 0.019 0.019 0.019 0.15 0.019 0.019 0.019 0.12 0.16 0.08 0.019 0.019 0.019 0.11 0.019 0.019 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065 0.69 0.03 0.0065 0.0065 0.0065 0.08 0.04 0.0065 0.0065 0.0065 0.03 0.0065 0.0065 0.0105 0.0105 0.0105 0.0105 0.06 0.0105 0.0105 0.0105 0.0105 0.0105 0.18 0.0105 0.0105 0.0105 0.0105 0.0105 0.0105 0.25 0.12 0.0105 0.0105 0.0105 0.18 0.0105 0.0105 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.09 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.22 0.07000000000000001 0.021 0.021 0.021 0.12 0.021 0.08 0.0095 0.0095 0.0095 0.0095 0.03 0.0095 0.0095 0.0095 0.54 0.0095 0.0095 0.0095 0.0095 0.0095 0.0095 0.0095 0.0095 0.09 0.09 0.0095 0.0095 0.0095 0.06 0.0095 0.0095 0.0105 0.0105 0.0105 0.0105 0.04 0.0105 0.46 0.0105 0.0105 0.0105 0.0105 0.0105 0.0105 0.0105 0.0105 0.0105 0.0105 0.16 0.07000000000000001 0.0105 0.0105 0.0105 0.06 0.0105 0.0105 0.04 0.013 0.013 0.013 0.013 0.013 0.09 0.013 0.013 0.32 0.013 0.013 0.013 0.013 0.013 0.013 0.013 0.22 0.013 0.013 0.013 0.013 0.07000000000000001 0.013 0.013 0.021 0.021 0.021 0.04 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.021 0.08 0.24 0.07000000000000001 0.021 0.021 0.021 0.15 0.021 0.021 0.0215 0.0215 0.0215 0.0215 0.0215 0.0215 0.0215 0.0215 0.0215 0.0215 0.0215 0.0215 0.1 0.0215 0.0215 0.0215 0.1 0.18 0.08 0.0215 0.0215 0.0215 0.11 0.0215 0.0215 0.0135 0.14 0.0135 0.0135 0.0135 0.0135 0.0135 0.0135 0.07000000000000001 0.0135 0.0135 0.0135 0.0135 0.0135 0.0135 0.0135 0.0135 0.21 0.14 0.0135 0.0135 0.0135 0.17 0.0135 0.0135 0.0145 0.0145 0.0145 0.0145 0.0145 0.09 0.0145 0.0145 0.0145 0.0145 0.0145 0.0145 0.0145 0.0145 0.0145 0.0145 0.0145 0.11 0.11 0.0145 0.0145 0.32 0.08 0.0145 0.0145 0.016 0.016 0.016 0.016 0.016 0.18 0.016 0.016 0.08 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.016 0.16 0.15 0.016 0.016 0.016 0.11 0.016 0.016 0.018 0.018 0.018 0.018 0.06 0.018 0.018 0.018 0.018 0.018 0.07000000000000001 0.018 0.018 0.018 0.018 0.018 0.018 0.22 0.13 0.018 0.018 0.018 0.16 0.018 0.018</probabilities>
+		</cpt>
+		<utility id="occupation_value">
+			<parents>occupation</parents>
+			<utilities>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</utilities>
+		</utility>
+		<mau id="total_value">
+			<parents>participate_often_value hours_relaxing_value graduate_degree_value judgments_value hours_preparing_value grades_value employed_value salary_value memorize_facts_value ideas_value applications_value analysis_value community_project_value twenty_page_paper_value long_prob_sets_value collab_outside_value presentations_often_value collab_in_class_value occupation_value</parents>
+			<weights>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</weights>
+		</mau>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.0.4334.1" name="Network" faultnameformat="nodestate">
+			<node id="major">
+				<name>major</name>
+				<interior color="ccffcc" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>330 44 455 111</position>
+				<barchart width="217" height="184" />
+			</node>
+			<node id="total_value">
+				<name>total_value</name>
+				<interior color="aac8ff" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>357 505 460 554</position>
+			</node>
+			<submodel id="Class">
+				<name>Class</name>
+				<interior color="ffffff" />
+				<outline color="000080" width="2" />
+				<font color="000000" name="Arial" size="8" />
+				<position>328 290 437 343</position>
+				<node id="participate_often">
+					<name>participate_often</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>152 189 261 236</position>
+					<barchart width="128" height="90" />
+				</node>
+				<node id="presentations_often">
+					<name>presentations_often</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>244 101 354 151</position>
+					<barchart width="128" height="90" />
+				</node>
+				<node id="collab_in_class">
+					<name>collab_in_class</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>391 83 515 127</position>
+					<barchart width="128" height="90" />
+				</node>
+				<node id="participate_often_value">
+					<name>participate_often_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>244 317 361 349</position>
+				</node>
+				<node id="presentations_often_value">
+					<name>presentations_often_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>334 260 483 292</position>
+				</node>
+				<node id="collab_in_class_value">
+					<name>collab_in_class_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>475 206 601 238</position>
+				</node>
+			</submodel>
+			<submodel id="Leisure_and_Socializing">
+				<name>Leisure and Socializing</name>
+				<interior color="ffffff" />
+				<outline color="000080" width="2" />
+				<font color="000000" name="Arial" size="8" />
+				<position>252 287 318 344</position>
+				<node id="hours_relaxing">
+					<name>hours_relaxing</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>211 159 344 198</position>
+				</node>
+				<node id="hours_relaxing_value">
+					<name>hours_relaxing_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>367 289 503 321</position>
+				</node>
+			</submodel>
+			<submodel id="Graduate_School">
+				<name>Graduate School</name>
+				<interior color="ffffff" />
+				<outline color="000080" width="2" />
+				<font color="000000" name="Arial" size="8" />
+				<position>141 283 237 345</position>
+				<node id="graduate_degree">
+					<name>graduate_degree</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>209 143 354 176</position>
+				</node>
+				<node id="graduate_degree_value">
+					<name>graduate_degree_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>286 252 443 282</position>
+				</node>
+			</submodel>
+			<submodel id="Career">
+				<name>Career</name>
+				<interior color="ffffff" />
+				<outline color="000080" width="2" />
+				<font color="000000" name="Arial" size="8" />
+				<position>45 285 125 342</position>
+				<node id="employed">
+					<name>employed</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>261 169 337 200</position>
+				</node>
+				<node id="salary">
+					<name>salary</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>106 102 180 132</position>
+				</node>
+				<node id="employed_value">
+					<name>employed_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>298 304 416 328</position>
+				</node>
+				<node id="salary_value">
+					<name>salary_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>158 253 263 277</position>
+				</node>
+				<node id="occupation">
+					<name>occupation</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>372 118 481 150</position>
+				</node>
+				<node id="occupation_value">
+					<name>occupation_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>444 269 549 293</position>
+				</node>
+			</submodel>
+			<submodel id="Grades">
+				<name>Grades</name>
+				<interior color="ffffff" />
+				<outline color="000080" width="2" />
+				<font color="000000" name="Arial" size="8" />
+				<position>450 290 548 346</position>
+				<node id="grades">
+					<name>grades</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>216 122 325 162</position>
+				</node>
+				<node id="grades_value">
+					<name>grades_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>323 240 423 264</position>
+				</node>
+			</submodel>
+			<submodel id="Homeworks_and_Projects">
+				<name>Homeworks and Projects</name>
+				<interior color="ffffff" />
+				<outline color="000080" width="2" />
+				<font color="000000" name="Arial" size="8" />
+				<position>559 285 663 347</position>
+				<node id="collab_outside">
+					<name>collab_outside</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>402 39 526 82</position>
+				</node>
+				<node id="community_project">
+					<name>community_project</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>131 124 242 167</position>
+				</node>
+				<node id="hours_preparing">
+					<name>hours_preparing</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>58 208 197 254</position>
+				</node>
+				<node id="twenty_page_paper">
+					<name>twenty_page_paper</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>254 73 374 113</position>
+				</node>
+				<node id="long_prob_sets">
+					<name>long_prob_sets</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>453 282 589 324</position>
+				</node>
+				<node id="hours_preparing_value">
+					<name>hours_preparing_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>187 336 364 365</position>
+				</node>
+				<node id="community_project_value">
+					<name>community_project_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>267 253 409 285</position>
+				</node>
+				<node id="twenty_page_paper_value">
+					<name>twenty_page_paper_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>375 185 525 217</position>
+				</node>
+				<node id="long_prob_sets_value">
+					<name>long_prob_sets_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>609 387 736 419</position>
+				</node>
+				<node id="collab_outside_value">
+					<name>collab_outside_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>564 143 685 175</position>
+				</node>
+			</submodel>
+			<submodel id="Coursework_Emphasis">
+				<name>Coursework Emphasis</name>
+				<interior color="ffffff" />
+				<outline color="000080" width="2" />
+				<font color="000000" name="Arial" size="8" />
+				<position>674 295 768 339</position>
+				<node id="memorize_facts">
+					<name>memorize_facts</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>166 198 297 255</position>
+				</node>
+				<node id="analysis">
+					<name>analysis</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>554 59 670 106</position>
+				</node>
+				<node id="ideas">
+					<name>ideas</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>302 152 409 201</position>
+				</node>
+				<node id="judgments">
+					<name>judgments</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>105 273 220 323</position>
+				</node>
+				<node id="applications">
+					<name>applications</name>
+					<interior color="e5f6f7" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>426 99 533 137</position>
+				</node>
+				<node id="judgments_value">
+					<name>judgments_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>206 399 338 438</position>
+				</node>
+				<node id="memorize_facts_value">
+					<name>memorize_facts_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>347 455 513 487</position>
+				</node>
+				<node id="ideas_value">
+					<name>ideas_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>433 278 511 310</position>
+				</node>
+				<node id="applications_value">
+					<name>applications_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>540 206 649 238</position>
+				</node>
+				<node id="analysis_value">
+					<name>analysis_value</name>
+					<interior color="ccffcc" />
+					<outline color="000080" />
+					<font color="000000" name="Arial" size="8" />
+					<position>693 162 785 194</position>
+				</node>
+			</submodel>
+		</genie>
+	</extensions>
+</smile>
