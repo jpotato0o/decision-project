@@ -125,7 +125,7 @@ public class MInfluenceDiagram {
 		   net.updateBeliefs();
 		   
 		   // Getting the handle of the node "Success":
-		   net.getNode("Actor_Value");
+		   net.getNode("Success");
 		   
 		   // Getting the index of the "Failure" outcome:
 		   String[] aSuccessOutcomeIds = net.getOutcomeIds("Actor_Value");
@@ -134,7 +134,7 @@ public class MInfluenceDiagram {
 		       break;
 		   
 		   // Getting the value of the probability:
-		   aValues = net.getNodeValue("Success");
+		   aValues = net.getNodeValue("Actor_Value");
 		   double P_SuccIsFailGivenForeIsGood = aValues[outcomeIndex];
 		   
 		   System.out.println("P(\"Success\" = Failure | \"Forecast\" = Good) = " + P_SuccIsFailGivenForeIsGood);
@@ -150,9 +150,9 @@ public class MInfluenceDiagram {
 		   net.updateBeliefs();
 		   
 		   // Getting the index of the "Failure" outcome:
-		   aSuccessOutcomeIds = net.getOutcomeIds("Success");
+		   aSuccessOutcomeIds = net.getOutcomeIds("Actor_Value");
 		   for (outcomeIndex = 0; outcomeIndex < aSuccessOutcomeIds.length; outcomeIndex++)
-		     if ("Failure".equals(aSuccessOutcomeIds[outcomeIndex]))
+		     if ("value".equals(aSuccessOutcomeIds[outcomeIndex]))
 		       break;
 		   
 		   // Getting the value of the probability:
@@ -236,10 +236,10 @@ public class MInfluenceDiagram {
 		   ValueOfInfo voi = new ValueOfInfo(net);
 		   
 		   // Getting the handles of nodes "Forecast" and "Invest":
-		   net.getNode("Forecast");
+		   net.getNode("Review");
 		   net.getNode("Invest");
 		   
-		   voi.addNode("Forecast");
+		   voi.addNode("Review");
 		   voi.setDecision("Invest");
 		   voi.update();
 		   
