@@ -44,9 +44,57 @@ public class MInfluenceDiagram {
 		   net.addNode(Network.NodeType.Cpt, "Quality");
 		   net.setOutcomeId("Quality", 1, "value");
 		   
+		   net.addNode(Network.NodeType.Cpt, "Offset");
+		   net.setOutcomeId("Offset", 1, "accurate");
+		   net.setOutcomeId("Offset", 1, "mid");
+		   net.setOutcomeId("Offset", 1, "noEffect");
+		   
+		   net.addNode(Network.NodeType.Cpt, "Youtube_Trailer_View_Count");
+		   net.setOutcomeId("Youtube_Trailer_View_Count", 1, "value");
+		   
+		   net.addNode(Network.NodeType.Cpt, "Facebook");
+		   net.setOutcomeId("Facebook", 1, "value");
+		   
+		   net.addNode(Network.NodeType.Cpt, "Google_Result");
+		   net.setOutcomeId("Google_Result", 1, "value");
+		   
+		   net.addNode(Network.NodeType.Cpt, "Twitter");
+		   net.setOutcomeId("Twitter", 1, "value");
+		   
+		   net.addNode(Network.NodeType.Cpt, "Social_Network_Activeness");
+		   net.setOutcomeId("Social_Network_Activeness", 1, "value");
+
+		   net.addNode(Network.NodeType.Cpt, "Box_Office");
+		   net.setOutcomeId("Box_Office", 1, "normal");
+		   net.setOutcomeId("Box_Office", 1, "threeD");
+		   net.setOutcomeId("Box_Office", 1, "iMAX");
+		   net.setOutcomeId("Box_Office", 1, "fourK");
+		   
+		   net.addNode(Network.NodeType.Cpt, "Holiday_Preference");
+		   net.setOutcomeId("Holiday_Preference", 1, "holiday");
+		   
+		   net.addNode(Network.NodeType.Cpt, "Risks");
+		   net.setOutcomeId("Risks", 1, "yes");
+		   net.setOutcomeId("Risks", 1, "no");
+		   
+		   net.addNode(Network.NodeType.Cpt, "Gross_Profit");
+		   net.setOutcomeId("Gross_Profit", 1, "normal");
+		   net.setOutcomeId("Gross_Profit", 1, "threeD");
+		   net.setOutcomeId("Gross_Profit", 1, "iMAX");
+		   net.setOutcomeId("Gross_Profit", 1, "fourK");
+		   
+		   net.addNode(Network.NodeType.Cpt, "Lease_Price");
+		   net.setOutcomeId("Lease_Price", 1, "normal");
+		   net.setOutcomeId("Lease_Price", 1, "threeD");
+		   net.setOutcomeId("Lease_Price", 1, "iMAX");
+		   net.setOutcomeId("Lease_Price", 1, "fourK");
+		   
+		   net.addNode(Network.NodeType.Cpt, "profit");
+		   net.setOutcomeId("profit", 1, "value");
 		   
 		   
 		   
+		   //之后的没改
 		   // Creating node "Forecast" and setting/adding outcomes:
 		   net.addNode(Network.NodeType.Cpt, "Forecast");  
 		   net.addOutcome("Forecast", "Good");
@@ -91,6 +139,7 @@ public class MInfluenceDiagram {
 		   System.out.println(e.getMessage());
 		 }
 		}
+	//之前的没改
 	
 	public void InferenceWithBayesianNetwork() {
 		 try {
