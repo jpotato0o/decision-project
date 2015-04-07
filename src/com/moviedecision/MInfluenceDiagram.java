@@ -92,23 +92,6 @@ public class MInfluenceDiagram {
 		 }
 		}
 	
-	public void InferenceWithBayesianNetwork() {
-		 try {
-		   Network net = new Network();
-		   net.readFile("models/changeID.xdsl"); 
-		   // Updating the network: 
-		   net.updateBeliefs();
-		       
-		   // ---- We want to compute P("Forecast" = Moderate) ----
-		   
-		   // Getting the handle of the node "Forecast":
-		   net.getNode("profit");
-		 }
-		 catch (SMILEException e) {
-		   System.out.println(e.getMessage());
-		 }
-		}
-	
 	public static void main(String[] args) { 
 		InferenceWithBayesianNetwork ID = new InferenceWithBayesianNetwork();
 	}
