@@ -228,4 +228,29 @@ public class MInfluenceDiagram {
 		   System.out.println(e.getMessage());
 		 }
 		}
+	public void ComputeValueOfInformation() {
+		 try {
+		   Network net = new Network();
+		   net.readFile("models/MovieModel.xdsl");
+		   
+		   ValueOfInfo voi = new ValueOfInfo(net);
+		   
+		   // Getting the handles of nodes "Forecast" and "Invest":
+		   net.getNode("Forecast");
+		   net.getNode("Invest");
+		   
+		   voi.addNode("Forecast");
+		   voi.setDecision("Invest");
+		   voi.update();
+		   
+		   double[] results = voi.getValues();
+		   double EVIForecast = results[0];
+		   
+		   System.out.println("Expected Value of Information (\"Forecast\") = " + EVIForecast);
+		 }
+		 catch (SMILEException e) {
+		   System.out.println(e.getMessage());
+		 }
+		}
+
 }
