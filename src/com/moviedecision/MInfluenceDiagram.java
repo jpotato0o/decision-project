@@ -171,15 +171,15 @@ public class MInfluenceDiagram {
 		   net.readFile("models/MovieModel.xdsl");
 		   
 		   // Creating node "Invest" and setting/adding outcomes:
-		   net.addNode(Network.NodeType.List, "Invest");
-		   net.setOutcomeId("Invest", 0, "Invest");
-		   net.setOutcomeId("Invest", 1, "DoNotInvest");
+		   net.addNode(Network.NodeType.List, "Quality");
+		   net.setOutcomeId("Quality", 0, "Invest");
+		   net.setOutcomeId("Quality", 1, "DoNotInvest");
 		   
 		   // Creating the value node "Gain":
 		   net.addNode(Network.NodeType.Table, "Gain");
 		   
 		   // Adding an arc from "Invest" to "Gain":
-		   net.addArc("Invest", "Gain");
+		   net.addArc("Quality", "Gain");
 		   
 		   // Adding an arc from "Success" to "Gain":
 		   net.getNode("Success");
@@ -237,10 +237,10 @@ public class MInfluenceDiagram {
 		   
 		   // Getting the handles of nodes "Forecast" and "Invest":
 		   net.getNode("Review");
-		   net.getNode("Invest");
+		   net.getNode("Quality");
 		   
 		   voi.addNode("Review");
-		   voi.setDecision("Invest");
+		   voi.setDecision("Quality");
 		   voi.update();
 		   
 		   double[] results = voi.getValues();
