@@ -165,4 +165,39 @@ public class MInfluenceDiagram {
 		   System.out.println(e.getMessage());
 		 }
 		}
+	public void UpgradeToInfluenceDiagram() {
+		 try {
+		   Network net = new Network();
+		   net.readFile("models/MovieModel.xdsl");
+		   
+		   // Creating node "Invest" and setting/adding outcomes:
+		   net.addNode(Network.NodeType.List, "Invest");
+		   net.setOutcomeId("Invest", 0, "Invest");
+		   net.setOutcomeId("Invest", 1, "DoNotInvest");
+		   
+		   // Creating the value node "Gain":
+		   net.addNode(Network.NodeType.Table, "Gain");
+		   
+		   // Adding an arc from "Invest" to "Gain":
+		   net.addArc("Invest", "Gain");
+		   
+		   // Adding an arc from "Success" to "Gain":
+		   net.getNode("Success");
+		   net.addArc("Success", "Gain");
+		   
+		   // Filling in the utilities for the node "Gain". The utilities are:
+		   // U("Invest" = Invest, "Success" = Success) = 10000
+		   // U("Invest" = Invest, "Success" = Failure) = -5000
+		   // U("Invest" = DoNotInvest, "Success" = Success) = 500
+		   // U("Invest" = DoNotInvest, "Success" = Failure) = 500
+		   double[] aGainDef = {10000, -5000, 500, 500};
+		   net.setNodeDefinition("Gain", aGainDef);
+		   
+		   net.writeFile("models/MovieModel.xdsl");
+		 }
+		 catch (SMILEException e) {
+		   System.out.println(e.getMessage());
+		 }
+		}
+
 }
