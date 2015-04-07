@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<smile version="1.0" id="Network1" numsamples="1000" discsamples="10000">
+	<nodes>
+		<utility id="Actor_Value">
+			<utilities>100000</utilities>
+		</utility>
+		<decision id="Film_Format_select">
+			<state id="normal" />
+			<state id="threeD" />
+			<state id="iMAX" />
+			<state id="fourK" />
+		</decision>
+		<utility id="Director_s_Value">
+			<utilities>50000</utilities>
+		</utility>
+		<mau id="HSX">
+			<parents>Actor_Value Director_s_Value</parents>
+			<weights>1 1</weights>
+		</mau>
+		<deterministic id="Release_date">
+			<state id="Christmas" />
+			<state id="Valentine" />
+			<state id="Halloween" />
+			<state id="SummerTerm" />
+			<state id="weekend" />
+			<state id="none" />
+			<resultingstates>Christmas</resultingstates>
+		</deterministic>
+		<deterministic id="Genre">
+			<state id="Action" />
+			<state id="Adventure" />
+			<state id="Comedy" />
+			<state id="Fantasy" />
+			<state id="History" />
+			<state id="Horror" />
+			<state id="Political" />
+			<state id="Romance" />
+			<state id="Crime" />
+			<state id="none" />
+			<resultingstates>Action</resultingstates>
+		</deterministic>
+		<utility id="Holiday_Preference">
+			<parents>Release_date Genre</parents>
+			<utilities>0 0 1 1 1 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0</utilities>
+		</utility>
+		<utility id="Copy_2_of_Rotten_Tomato_2">
+			<utilities>0</utilities>
+		</utility>
+		<utility id="Copy_of_Rotten_Tomato_2">
+			<utilities>0</utilities>
+		</utility>
+		<utility id="Rotten_Tomato_2">
+			<utilities>0</utilities>
+		</utility>
+		<maux id="Review">
+			<parents>Copy_2_of_Rotten_Tomato_2 Copy_of_Rotten_Tomato_2 Rotten_Tomato_2</parents>
+			<expression>0.8*Copy_of_Rotten_Tomato_2+0.7*Rotten_Tomato_2+0.8*Copy_2_of_Rotten_Tomato_2</expression>
+		</maux>
+		<cpt id="Accuracy">
+			<state id="accurate" />
+			<state id="mid" />
+			<state id="noEffect" />
+			<probabilities>0.9 0.05 0.05</probabilities>
+		</cpt>
+		<utility id="Offset">
+			<parents>Accuracy</parents>
+			<utilities>1 0.5 0</utilities>
+		</utility>
+		<maux id="Quality">
+			<parents>Offset Review</parents>
+			<expression>Review*Offset</expression>
+		</maux>
+		<cpt id="Internal">
+			<state id="yes" />
+			<state id="no" />
+			<probabilities>0.001 0.999</probabilities>
+		</cpt>
+		<cpt id="PR_crisis">
+			<state id="yes" />
+			<state id="no" />
+			<probabilities>0.01 0.99</probabilities>
+		</cpt>
+		<utility id="Risks">
+			<parents>Internal PR_crisis</parents>
+			<utilities>-1 -1 -0.3 0</utilities>
+		</utility>
+		<utility id="Youtube_Trailer_View_Count_2">
+			<utilities>0</utilities>
+		</utility>
+		<utility id="Twitter">
+			<utilities>0</utilities>
+		</utility>
+		<utility id="Facebook">
+			<utilities>0</utilities>
+		</utility>
+		<utility id="Google_Result">
+			<utilities>0</utilities>
+		</utility>
+		<mau id="Social_Network_Activeness">
+			<parents>Youtube_Trailer_View_Count_2 Twitter Facebook Google_Result</parents>
+			<weights>0.4545454545454546 0.1818181818181818 0.2727272727272727 0.09090909090909083</weights>
+		</mau>
+		<maux id="Box_Office">
+			<parents>Film_Format_select HSX Holiday_Preference Quality Risks Social_Network_Activeness</parents>
+			<expression>(HSX/100000+(Quality+Social_Network_Activeness)/10000+1000)*(1+Risks)*(1+Holiday_Preference)</expression>
+			<expression>(HSX/100000+(Quality+Social_Network_Activeness)/10000+1000)*(1+Risks)*(1+Holiday_Preference)*1.2</expression>
+			<expression>(HSX/100000+(Quality+Social_Network_Activeness)/10000+1000)*(1+Risks)*(1+Holiday_Preference)*2</expression>
+			<expression>(HSX/100000+(Quality+Social_Network_Activeness)/10000+1000)*(1+Risks)*(1+Holiday_Preference)*1.7</expression>
+		</maux>
+		<maux id="Gross_Profit">
+			<parents>Film_Format_select Box_Office</parents>
+			<expression>Box_Office*10</expression>
+			<expression>Box_Office*12</expression>
+			<expression>Box_Office*20</expression>
+			<expression>Box_Office*15</expression>
+		</maux>
+		<utility id="Lease_Price">
+			<parents>Film_Format_select</parents>
+			<utilities>1000 2000 3000 2500</utilities>
+		</utility>
+		<maux id="Profit_2">
+			<parents>Gross_Profit Lease_Price</parents>
+			<expression>Gross_Profit-Lease_Price</expression>
+		</maux>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.0.5494.1" name="Network1" faultnameformat="nodestate">
+			<node id="Release_date">
+				<name>Release date</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="ff6600" name="Arial" size="8" />
+				<position>512 321 611 372</position>
+			</node>
+			<node id="Internal">
+				<name>Internal</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>653 327 711 365</position>
+			</node>
+			<node id="PR_crisis">
+				<name>PR crisis</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>737 318 806 363</position>
+			</node>
+			<node id="Film_Format_select">
+				<name>Film Format</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="ff6600" name="Arial" size="8" />
+				<position>625 28 703 52</position>
+			</node>
+			<node id="Profit_2">
+				<name>Profit</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>812 188 857 220</position>
+			</node>
+			<node id="Box_Office">
+				<name>Box Office</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>606 175 722 224</position>
+			</node>
+			<node id="Actor_Value">
+				<name>Actor(s)&apos; Value</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>171 51 298 88</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Director_s_Value">
+				<name>Director&apos;s Value</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>162 105 259 137</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="HSX">
+				<name>HSX</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>278 117 379 149</position>
+			</node>
+			<node id="Rotten_Tomato_2">
+				<name>Rotten Tomato</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>74 198 163 230</position>
+			</node>
+			<node id="Review">
+				<name>Review</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>227 191 308 223</position>
+			</node>
+			<node id="Copy_of_Rotten_Tomato_2">
+				<name>IMDB</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>83 151 172 183</position>
+			</node>
+			<node id="Copy_2_of_Rotten_Tomato_2">
+				<name>Metacritic</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>76 240 165 272</position>
+			</node>
+			<node id="Accuracy">
+				<name>Review Accuracy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>116 286 216 324</position>
+			</node>
+			<node id="Offset">
+				<name>Offset</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>242 259 299 291</position>
+			</node>
+			<node id="Quality">
+				<name>Quality</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>344 217 401 249</position>
+			</node>
+			<node id="Youtube_Trailer_View_Count_2">
+				<name>Youtube Trailer View Count</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>47 336 176 396</position>
+			</node>
+			<node id="Twitter">
+				<name>Twitter</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>360 561 457 597</position>
+			</node>
+			<node id="Facebook">
+				<name>Facebook</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>104 457 200 491</position>
+			</node>
+			<node id="Google_Result">
+				<name>Google Result Count</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>204 444 300 476</position>
+			</node>
+			<node id="Social_Network_Activeness">
+				<name>Social Network Activeness</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>248 319 372 365</position>
+			</node>
+			<node id="Risks">
+				<name>Risks</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>673 264 751 296</position>
+			</node>
+			<node id="Lease_Price">
+				<name>Lease Price</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>794 25 871 57</position>
+			</node>
+			<node id="Gross_Profit">
+				<name>Gross Profit</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>711 113 805 145</position>
+			</node>
+			<node id="Holiday_Preference">
+				<name>Holiday Preference</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>538 259 627 291</position>
+			</node>
+			<node id="Genre">
+				<name>Genre</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>443 296 498 333</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>
