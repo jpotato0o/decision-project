@@ -77,11 +77,11 @@ public class MInfluenceDiagram {
 		   net.setNodeDefinition("Forecast", aForecastDef);
 		   
 		   // Changing the nodes' spacial and visual attributes:
-		   net.setNodePosition("Success", 20, 20, 80, 30);
-		   net.setNodeBgColor("Success", Color.red);
-		   net.setNodeTextColor("Success", Color.white);
-		   net.setNodeBorderColor("Success", Color.black);
-		   net.setNodeBorderWidth("Success", 2);
+		   net.setNodePosition("Actor_Value", 20, 20, 80, 30);
+		   net.setNodeBgColor("Actor_Value", Color.red);
+		   net.setNodeTextColor("Actor_Value", Color.white);
+		   net.setNodeBorderColor("Actor_Value", Color.black);
+		   net.setNodeBorderWidth("Actor_Value", 2);
 		   net.setNodePosition("Forecast", 30, 100, 60, 30);
 		   
 		   // Writting the network to a file:
@@ -125,12 +125,12 @@ public class MInfluenceDiagram {
 		   net.updateBeliefs();
 		   
 		   // Getting the handle of the node "Success":
-		   net.getNode("Success");
+		   net.getNode("Actor_Value");
 		   
 		   // Getting the index of the "Failure" outcome:
-		   String[] aSuccessOutcomeIds = net.getOutcomeIds("Success");
+		   String[] aSuccessOutcomeIds = net.getOutcomeIds("Actor_Value");
 		   for (outcomeIndex = 0; outcomeIndex < aSuccessOutcomeIds.length; outcomeIndex++)
-		     if ("Failure".equals(aSuccessOutcomeIds[outcomeIndex]))
+		     if ("value".equals(aSuccessOutcomeIds[outcomeIndex]))
 		       break;
 		   
 		   // Getting the value of the probability:
@@ -199,5 +199,33 @@ public class MInfluenceDiagram {
 		   System.out.println(e.getMessage());
 		 }
 		}
-
+	public void InferenceWithInfluenceDiagram() {
+		 try {
+		   // Loading and updating the influence diagram: 
+		   Network net = new Network();
+		   net.readFile("models/MovieModel.xdsl");
+		   net.updateBeliefs();
+		   
+		   // Getting the utility node's handle:
+		   net.getNode("Gain");
+		   
+		   // Getting the handle and the name of value indexing parent (decision node):
+		   int[] aValueIndexingParents = net.getValueIndexingParents("Gain");
+		   int nodeDecision = aValueIndexingParents[0];
+		   String decisionName = net.getNodeName(nodeDecision);
+		   
+		   // Displaying the possible expected values:
+		   System.out.println("These are the expected utilities:");
+		   for (int i = 0; i < net.getOutcomeCount(nodeDecision); i++) {
+		     String parentOutcomeId = net.getOutcomeId(nodeDecision, i);
+		     double expectedUtility = net.getNodeValue("Gain")[i];
+		     
+		     System.out.print("  - \"" + decisionName + "\" = " + parentOutcomeId + ": ");
+		     System.out.println("Expected Utility = " + expectedUtility);
+		   }
+		 }
+		 catch (SMILEException e) {
+		   System.out.println(e.getMessage());
+		 }
+		}
 }
