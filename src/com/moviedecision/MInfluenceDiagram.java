@@ -162,3 +162,4 @@ public class MInfluenceDiagram {
 		InferenceWithBayesianNetwork ID = new InferenceWithBayesianNetwork();
 	}
 }
+
