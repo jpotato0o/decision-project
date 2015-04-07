@@ -90,9 +90,79 @@ public class MInfluenceDiagram {
 		 catch (SMILEException e) {
 		   System.out.println(e.getMessage());
 		 }
-		}
-	
-	public static void main(String[] args) { 
-		InferenceWithBayesianNetwork ID = new InferenceWithBayesianNetwork();
 	}
+	
+	public void InfereceWithBayesianNetwork() {
+		 try {
+		   Network net = new Network();
+		   net.readFile("models/MovieModel.xdsl"); 
+		   // ---- We want to compute P("Forecast" = Moderate) ----
+		   // Updating the network:
+		   net.updateBeliefs();
+		   
+		   // Getting the handle of the node "Forecast":
+		   net.getNode("Forecast");
+		   
+		   // Getting the index of the "Moderate" outcome:
+		   String[] aForecastOutcomeIds = net.getOutcomeIds("Forecast");
+		   int outcomeIndex;
+		   for (outcomeIndex = 0; outcomeIndex < aForecastOutcomeIds.length; outcomeIndex++)
+		     if ("Moderate".equals(aForecastOutcomeIds[outcomeIndex]))
+		       break;
+		   
+		   // Getting the value of the probability:
+		   double[] aValues = net.getNodeValue("Forecast");
+		   double P_ForecastIsModerate = aValues[outcomeIndex];
+		   
+		   System.out.println("P(\"Forecast\" = Moderate) = "      + P_ForecastIsModerate);
+		   
+		   
+		   // ---- We want to compute P("Success" = Failure | "Forecast" = Good) ----
+		   // Introducing the evidence in node "Forecast":
+		   net.setEvidence("Forecast", "Good");
+		   
+		   // Updating the network:
+		   net.updateBeliefs();
+		   
+		   // Getting the handle of the node "Success":
+		   net.getNode("Success");
+		   
+		   // Getting the index of the "Failure" outcome:
+		   String[] aSuccessOutcomeIds = net.getOutcomeIds("Success");
+		   for (outcomeIndex = 0; outcomeIndex < aSuccessOutcomeIds.length; outcomeIndex++)
+		     if ("Failure".equals(aSuccessOutcomeIds[outcomeIndex]))
+		       break;
+		   
+		   // Getting the value of the probability:
+		   aValues = net.getNodeValue("Success");
+		   double P_SuccIsFailGivenForeIsGood = aValues[outcomeIndex];
+		   
+		   System.out.println("P(\"Success\" = Failure | \"Forecast\" = Good) = " + P_SuccIsFailGivenForeIsGood);
+		   
+		   // ---- We want to compute P("Success" = Success | "Forecast" = Poor) ----
+		   // Clearing the evidence in node "Forecast":
+		   net.clearEvidence("Forecast");
+		   
+		   // Introducing the evidence in node "Forecast":
+		   net.setEvidence("Forecast", "Good");
+		   
+		   // Updating the network:
+		   net.updateBeliefs();
+		   
+		   // Getting the index of the "Failure" outcome:
+		   aSuccessOutcomeIds = net.getOutcomeIds("Success");
+		   for (outcomeIndex = 0; outcomeIndex < aSuccessOutcomeIds.length; outcomeIndex++)
+		     if ("Failure".equals(aSuccessOutcomeIds[outcomeIndex]))
+		       break;
+		   
+		   // Getting the value of the probability:
+		   aValues = net.getNodeValue("Success");
+		   double P_SuccIsSuccGivenForeIsPoor = aValues[outcomeIndex];
+		   
+		   System.out.println("P(\"Success\" = Success | \"Forecast\" = Poor) = " + P_SuccIsSuccGivenForeIsPoor);
+		 }
+		 catch (SMILEException e) {
+		   System.out.println(e.getMessage());
+		 }
+		}
 }
